@@ -37,8 +37,8 @@ jobs:
       - name: Checkout-new-tag
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           ref: ${{ steps.tag.outputs.VERSION }}
+          fetch-depth: 10
 
       - name: hi
         run: |
