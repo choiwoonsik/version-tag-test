@@ -109,6 +109,7 @@ jobs:
       - name: GITHUB ACTIONS 체크아웃
         uses: actions/checkout@v3
         with:
+          ref: production
           fetch-depth: 10
 
       - name: 새 태그 및 저자 설정
