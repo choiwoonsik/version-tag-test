@@ -4,10 +4,10 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_run:
-    workflows: [ "production-release" ]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: [ "production-release" ]
+#    types:
+#      - completed
 
 jobs:
   verify:
@@ -37,8 +37,8 @@ jobs:
       - name: Checkout-new-tag
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           ref: ${{ steps.tag.outputs.VERSION }}
+          fetch-depth: 10
 
       - name: hi
         run: |
